@@ -14,8 +14,18 @@ def showTasks( ):
       print(i+1,".",tasks[i])
 
 def removetask(tasknumber):
-    tasks.pop(tasknumber) 
-    print("task removed!!")
+    if len(tasks) == 0:
+        print("No tasks to remove!")
+        return
+    
+    if tasknumber < 1 or tasknumber > len(tasks):
+        print(f"Invalid task number! Please enter a number between 1 and {len(tasks)}")
+        return
+    
+    # Convert to 0-based index for internal use
+    index = tasknumber - 1
+    removed_task = tasks.pop(index)
+    print(f"Task '{removed_task}' removed!!")
 
 def main():
     while True:
@@ -30,8 +40,11 @@ def main():
         elif ch=="2":
             showTasks()
         elif ch=="3":
-            n=int(input("enter task no to remove: "))
-            removetask(n)   
+            try:
+                n = int(input("enter task no to remove: "))
+                removetask(n)
+            except ValueError:
+                print("Invalid input! Please enter a valid number.")   
         elif ch=="4":
             break;
         else:
