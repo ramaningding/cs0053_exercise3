@@ -8,7 +8,7 @@ def addtask(task):
     print("task added!")
 
 def confirmDeletion(tasknumber): 
-     index = tasknumber - 1
+    index = tasknumber - 1
     task_to_delete = tasks[index]
     confirm = input(f"Are you sure you want to delete '{task_to_delete}'? (y/n): ").strip().lower()
     if confirm == "y":
