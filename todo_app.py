@@ -6,6 +6,16 @@ def addtask(task) :
   tasks.append(task)
   print("task added!")
 
+def confirmDeletion(tasknumber): 
+     index = tasknumber - 1
+    task_to_delete = tasks[index]
+    confirm = input(f"Are you sure you want to delete '{task_to_delete}'? (y/n): ").strip().lower()
+    if confirm == "y":
+        removed_task = tasks.pop(index)
+        print(f"Task '{removed_task}' deleted.")
+    else:
+        print("Deletion cancelled.")
+
 def showTasks( ):
     if len(tasks)==0 :
       print("no tasks yet")
@@ -21,11 +31,7 @@ def removetask(tasknumber):
     if tasknumber < 1 or tasknumber > len(tasks):
         print(f"Invalid task number! Please enter a number between 1 and {len(tasks)}")
         return
-    
-    # Convert to 0-based index for internal use
-    index = tasknumber - 1
-    removed_task = tasks.pop(index)
-    print(f"Task '{removed_task}' removed!!")
+    confirmDeletion(tasknumber)
 
 def main():
     while True:
@@ -46,7 +52,7 @@ def main():
             except ValueError:
                 print("Invalid input! Please enter a valid number.")   
         elif ch=="4":
-            break;
+            break
         else:
             print("wrong choice!!")
 main()
