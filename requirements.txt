@@ -1,3 +1,14 @@
-pytest>=7.0
+# formatters
 black
+isort
+
+# linters / fast all-in-one
+ruff
+
+# traditional linters / type checking
 flake8
+pylint
+mypy
+
+# git hook manager (optional, recommended)
+pre-commit
