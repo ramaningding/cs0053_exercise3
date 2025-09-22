@@ -33,11 +33,15 @@ def removetask(tasknumber):
 def main():
     """Run the main menu loop for the todo application with user interaction."""
     while True:
-        print("1 Add Task")
-        print("2.Show Tasks")
-        print("3.Remove Task")
-        print("4- Exit")
-        ch = input("enter choice : ")
+        print("\n" + "="*30)
+        print("      TODO LIST MANAGER")
+        print("="*30)
+        print("1. Add Task")
+        print("2. Show Tasks")
+        print("3. Remove Task")
+        print("4. Exit")
+        print("-"*30)
+        ch = input("Please enter your choice (1-4): ")
         if ch=="1":
             t = input("enter task : ")
             addtask(t)
