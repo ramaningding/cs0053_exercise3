@@ -2,9 +2,10 @@
 
 tasks=[]
 
-def addtask(task) :
-  tasks.append(task)
-  print("task added!")
+def addtask(task):
+    """Add a new task to the tasks list and confirm addition."""
+    tasks.append(task)
+    print("task added!")
 
 def confirmDeletion(tasknumber): 
      index = tasknumber - 1
@@ -16,7 +17,8 @@ def confirmDeletion(tasknumber):
     else:
         print("Deletion cancelled.")
 
-def showTasks( ):
+def showTasks():
+    """Display all tasks in a numbered list or show a message if no tasks exist."""
     if len(tasks)==0 :
       print("no tasks yet")
     else:
@@ -24,6 +26,7 @@ def showTasks( ):
       print(i+1,".",tasks[i])
 
 def removetask(tasknumber):
+    """Remove a task by its number (1-based) with validation and confirmation."""
     if len(tasks) == 0:
         print("No tasks to remove!")
         return
@@ -34,6 +37,7 @@ def removetask(tasknumber):
     confirmDeletion(tasknumber)
 
 def main():
+    """Run the main menu loop for the todo application with user interaction."""
     while True:
         print("1 Add Task")
         print("2.Show Tasks")
