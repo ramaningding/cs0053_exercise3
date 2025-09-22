@@ -12,6 +12,9 @@ def add_task(task):
 
 
 def confirm_deletion(task_number):
+    """
+    Prompt user for confirmation before deleting a task and handle the deletion.
+    """
     index = task_number - 1
     task_to_delete = tasks[index]
     confirm = input(
